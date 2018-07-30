@@ -1,0 +1,104 @@
+/*
+   statusbar-overlay sets the background color for the overlay. Black text is the default when the statusbar plugin is not added. When the
+   statusbar plugin is added, it also adds default setting to make the content white via:
+
+       <preference name="StatusBarStyle" value="lightcontent"/>
+
+   Setting the background color to black will allow the default light content (white text/icons) to show on it. The statusbar plugin is included
+   in the config.xml file and will be added by the CLI when you build locally.
+
+   See https://github.com/apache/cordova-plugin-statusbar
+*/
+
+.statusbar-overlay {
+    background: #000000;
+}
+#Banner img{
+    height: 200px;
+    width: 100%;
+    border-radius: 1px;
+}
+#search{
+
+}
+#title {
+    font: 400 20px/1.3 'Cookie', Helvetica, sans-serif;
+    color: black;
+    text-shadow: 4px 4px 3px rgba(0,0,0,0.1);
+}
+.container {
+    position: relative;
+}
+
+input[type=text] {
+    width: 100px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-size: 20px 20px;
+    background-image: url('../Images/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+    input[type=text]:focus {
+        width: 50%;
+    }
+.blur {
+    -webkit-filter: blur(5px); /* Chrome, Safari, Opera */
+    filter: blur(5px);
+}
+/* Your app custom files in this file */
+/* Tab bar icons */
+i.tabbar-demo-icon-1 {
+    width: 35%;
+    height: 120px;
+    background-image: url('../Images/cars.png');
+}
+
+.active i.tabbar-demo-icon-1 {
+    background-image: url('../Images/cars.png');
+}
+i.tabbar-demo-icon-2 {
+    width: 35%;
+    height: 120px;
+    background-image: url('../Images/electrical.png');
+}
+
+.active i.tabbar-demo-icon-2 {
+    background-image: url('../Images/electrical.png');
+}
+i.tabbar-demo-icon-3 {
+    width: 35%;
+    height: 120px;
+    background-image: url('../Images/clothes.png');
+}
+
+.active i.tabbar-demo-icon-3 {
+    background-image: url('../Images/clothes.png');
+}
+div.item {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 120px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+}
+#figcaption{
+    position:absolute;
+    left:15%;
+}
+#electricals{
+    left:75%;
+}
+

@@ -3,5 +3,19 @@
     "version": "1.0.0",
     "private": true,
     "dependencies": {
+        "cordova-android": "^7.0.0",
+        "cordova-ios": "4.2.0",
+        "cordova-plugin-whitelist": "^1.2.2",
+        "cordova-windows": "4.4.2"
+    },
+    "cordova": {
+        "platforms": [
+            "ios",
+            "windows",
+            "android"
+        ],
+        "plugins": {
+            "cordova-plugin-whitelist": {}
+        }
     }
 }
