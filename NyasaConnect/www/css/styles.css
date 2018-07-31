@@ -18,9 +18,6 @@
     width: 100%;
     border-radius: 1px;
 }
-#search{
-
-}
 #title {
     font: 400 20px/1.3 'Cookie', Helvetica, sans-serif;
     color: black;
@@ -32,10 +29,9 @@
 
 input[type=text] {
     width: 100px;
-    box-sizing: border-box;
+    box-sizing:border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
-    font-size: 16px;
     background-color: white;
     background-size: 20px 20px;
     background-image: url('../Images/searchicon.png');
@@ -56,8 +52,8 @@ input[type=text] {
 /* Your app custom files in this file */
 /* Tab bar icons */
 i.tabbar-demo-icon-1 {
-    width: 35%;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     background-image: url('../Images/cars.png');
 }
 
@@ -65,8 +61,8 @@ i.tabbar-demo-icon-1 {
     background-image: url('../Images/cars.png');
 }
 i.tabbar-demo-icon-2 {
-    width: 35%;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     background-image: url('../Images/electrical.png');
 }
 
@@ -74,8 +70,8 @@ i.tabbar-demo-icon-2 {
     background-image: url('../Images/electrical.png');
 }
 i.tabbar-demo-icon-3 {
-    width: 35%;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     background-image: url('../Images/clothes.png');
 }
 
@@ -94,11 +90,33 @@ img {
     height: 100px;
     background-color: grey;
 }
-#figcaption{
-    position:absolute;
-    left:15%;
-}
-#electricals{
-    left:75%;
+div.relative {
+    position: relative;
+    width: 100%;
+    height: 360px;
 }
 
+div.a {
+    position: absolute;
+    left: 0;
+    top: 2%;
+}
+
+div.b {
+    position: absolute;
+    right: 0;
+    top:2%;
+}
+
+div.c {
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+figcaption {
+    position: relative;
+    bottom: 20px;
+    color: black;
+    text-align: center;
+    font-size: 14px;
+}

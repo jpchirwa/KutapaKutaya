@@ -91,4 +91,5 @@
     <engine name="ios" spec="4.2.0" />
     <engine name="windows" spec="4.4.2" />
     <engine name="android" spec="^7.0.0" />
+    <engine name="browser" spec="^5.0.3" />
 </widget>
