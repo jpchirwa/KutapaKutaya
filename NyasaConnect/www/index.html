@@ -48,17 +48,17 @@
     <!-- Views -->
     <div class="views tabs toolbar-through">
         <!-- Your main view, should have "view-main" class -->
-        <div class="view view-main tab active">
+        <div class="view view-main">
             <!-- Top Navbar-->
             <div class="navbar">
-                <div class="navbar-inner">
+                <div class="navbar-inner" data-page="index">
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
                     <div class="center sliding" id="title">Kutapa Kutaya Mw</div>
                     <div class="right">
                         <!--
-                      Right link contains only icon - additional "icon-only" class
-                      Additional "open-panel" class tells app to open panel when we click on this link
-                    -->
+                  Right link contains only icon - additional "icon-only" class
+                  Additional "open-panel" class tells app to open panel when we click on this link
+                -->
                         <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
                     </div>
                 </div>
@@ -82,16 +82,16 @@
                                 <div class="text-block">
                                     <div class="relative">
                                         <div class="a">
-                                            <a href="#view-1" onclick="cars();" class="tab-link"> <i class="icon tabbar-demo-icon-1"></i><span class="tabbar-label"></span><figcaption id="figcaption">Cars</figcaption></a>
+                                            <i class="icon tabbar-demo-icon-1"></i><span class="tabbar-label"></span><figcaption id="figcaption">Cars</figcaption>
                                         </div>
                                         <div class="b">
-                                            <a href="#view-2" onclick="electricals();" class="tab-link" id="electrical"> <i class="icon tabbar-demo-icon-2"></i><span class="tabbar-label"></span><figcaption id="figcaption">Electronics</figcaption></a>
+                                            <i class="icon tabbar-demo-icon-2"></i><span class="tabbar-label"></span><figcaption id="figcaption">Electronics</figcaption>
                                         </div>
                                         <div class="c">
-                                            <a href="#view-3" onclick="clothes();" class="tab-link"> <i class="icon tabbar-demo-icon-3"></i><span class="tabbar-label"></span><figcaption id="figcaption">Clothes</figcaption></a>
+                                             <i class="icon tabbar-demo-icon-3"></i><span class="tabbar-label"></span><figcaption id="figcaption">Clothes</figcaption>
                                         </div>
                                         <div class="d">
-                                            <a href="#view-4" onclick="houses();" class="tab-link"> <i class="icon tabbar-demo-icon-4"></i><span class="tabbar-label"></span><figcaption id="figcaption">Houses</figcaption></a>
+                                             <i class="icon tabbar-demo-icon-4"></i><span class="tabbar-label"></span><figcaption id="figcaption">Houses</figcaption>
                                         </div>
                                     </div>
                                 </div>
@@ -99,23 +99,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-        </div>
-        <div id="view-4" class="view tab">
-            <div class="pages navbar-fixed toolbar-fixed">
-                <div data-page="index-4" class="page">
-                    <div class="navbar">
-                        <div class="navbar-inner">
-                            <div class="center">iWasHere Camera</div>
-                        </div>
-                    </div>
+                <div class="page cached" data-page="cars">
                     <div class="page-content">
                         <h3>Search Results</h3>
                         <div class="contacts-content">
                             <div id="Search">
                                 <input type="text" name="search" placeholder="Search and find..">
                             </div>
+                            <a href="#index" class="back"> Go back to home page </a>
                         </div>
                     </div>
                 </div>
