@@ -88,8 +88,8 @@
         <splash height="1920" src="res/screens/windows/SplashScreenPhone.scale-240.png" width="1152" />
     </platform>
     <vs:toolsetVersion>6.3.1</vs:toolsetVersion>
-    <engine name="ios" spec="4.2.0" />
-    <engine name="windows" spec="4.4.2" />
-    <engine name="android" spec="^7.0.0" />
-    <engine name="browser" spec="^5.0.3" />
+    <engine name="ios" spec="^4.5.5" />
+    <engine name="windows" spec="^6.0.0" />
+    <engine name="android" spec="^7.1.1" />
+    <engine name="browser" spec="^5.0.4" />
 </widget>
