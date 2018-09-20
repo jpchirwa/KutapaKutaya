@@ -46,9 +46,11 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="floating-button color-orange">
-                <i class="icon icon-plus"></i>
-            </a>
+            <div class="floater">
+                <a href="#" class="floating-button color-orange">
+                    <i class="icon icon-plus"></i>
+                </a>
+            </div>
             <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
             <div class="pages navbar-through toolbar-through">
                 <!-- Page, "data-page" contains page name -->
@@ -79,6 +81,9 @@
                                         <div class="d">
                                             <i class="icon tabbar-demo-icon-4"></i><span class="tabbar-label"></span><figcaption id="figcaption">Houses</figcaption>
                                         </div>
+                                        <div>
+                                            <button onclick="getImage()">Upload a Photo</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -86,6 +91,39 @@
                     </div>
                 </div>
                 <div class="page cached" data-page="cars">
+                    <div class="page-content">
+                        <h3>Search Results</h3>
+                        <div class="contacts-content">
+                            <div id="Search">
+                                <input type="text" name="search" placeholder="Search and find..">
+                            </div>
+                            <a href="#index" class="back"> Go back to home page </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="page cached" data-page="electronics">
+                    <div class="page-content">
+                        <h3>Search Results</h3>
+                        <div class="contacts-content">
+                            <div id="Search">
+                                <input type="text" name="search" placeholder="Search and find..">
+                            </div>
+                            <a href="#index" class="back"> Go back to home page </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="page cached" data-page="clothes">
+                    <div class="page-content">
+                        <h3>Search Results</h3>
+                        <div class="contacts-content">
+                            <div id="Search">
+                                <input type="text" name="search" placeholder="Search and find..">
+                            </div>
+                            <a href="#index" class="back"> Go back to home page </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="page cached" data-page="houses">
                     <div class="page-content">
                         <h3>Search Results</h3>
                         <div class="contacts-content">

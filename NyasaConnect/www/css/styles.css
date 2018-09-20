@@ -40,8 +40,8 @@ input[type=text] {
 /* Your app custom files in this file */
 /* Tab bar icons */
 i.tabbar-demo-icon-1 {
-    width: 130px;
-    height: 130px;
+    width: 115px;
+    height: 115px;
     background-image: url('../Images/cars.png');
 }
 
@@ -49,8 +49,8 @@ i.tabbar-demo-icon-1 {
     background-image: url('../Images/cars.png');
 }
 i.tabbar-demo-icon-2 {
-    width: 130px;
-    height: 130px;
+    width: 115px;
+    height: 115px;
     background-image: url('../Images/electrical.png');
 }
 
@@ -58,8 +58,8 @@ i.tabbar-demo-icon-2 {
     background-image: url('../Images/electrical.png');
 }
 i.tabbar-demo-icon-3 {
-    width: 130px;
-    height: 130px;
+    width: 115px;
+    height: 115px;
     background-image: url('../Images/clothes.png');
 }
 
@@ -67,8 +67,8 @@ i.tabbar-demo-icon-3 {
     background-image: url('../Images/clothes.png');
 }
 i.tabbar-demo-icon-4 {
-    width: 130px;
-    height: 130px;
+    width: 115px;
+    height: 115px;
     background-image: url('../Images/houses.png');
 }
 
@@ -95,25 +95,25 @@ div.relative {
 
 div.a {
     position: absolute;
-    left: 0;
+    left: 20px;
     top: 3%;
 }
 
 div.b {
     position: absolute;
-    right: 0;
+    right: 20px;
     top:3%;
 }
 
 div.c {
     position: absolute;
-    left: 0;
-    top: 58%;
+    left: 20px;
+    top: 45%;
 }
 div.d {
     position: absolute;
-    right: 0;
-    top: 58%;
+    right: 20px;
+    top: 45%;
 }
 figcaption {
     position: relative;
