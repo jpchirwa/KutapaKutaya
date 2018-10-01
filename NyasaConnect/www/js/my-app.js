@@ -17,10 +17,12 @@ var mainView = myApp.addView('.view-main', {
 });
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
 myApp.onPageInit('index', function (page) {
-    myApp.alert("Welcome");
+    myApp.alert('Here goes alert text', 'Custom Title!', function () {
+        myApp.alert('Button clicked!')
+    });
 })
 $(".floater").click(function () {
-    alert("ok")
+    cameraGetPicture();
 });
 
 // Now we need to run the code that will be executed only for About page.
@@ -46,7 +48,38 @@ $(".d").click(function () {
     mainView.router.load({ pageName: 'houses' });
 });
 myApp.init();
+function cameraTakePicture() {
+    navigator.camera.getPicture(onSuccess, onFail, {
+        quality: 50,
+        destinationType: Camera.DestinationType.DATA_URL
+    });
 
+    function onSuccess(imageData) {
+        var image = document.getElementById('myImage');
+        image.src = "data:image/jpeg;base64," + imageData;
+    }
+
+    function onFail(message) {
+        alert('Failed because: ' + message);
+    }
+}
+function cameraGetPicture() {
+    navigator.camera.getPicture(onSuccess, onFail, {
+        quality: 50,
+        destinationType: Camera.DestinationType.DATA_URL,
+        sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+    });
+
+    function onSuccess(imageURL) {
+        var image = document.getElementById('myImage');
+        image.src = imageURL;
+    }
+
+    function onFail(message) {
+        alert('Failed because: ' + message);
+    }
+
+}
 var swiper = app.swiper.get('.swiper-container');
 
 swiper.slideNext();
