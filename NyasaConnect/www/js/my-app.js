@@ -5,7 +5,8 @@ var myApp = new Framework7({
     swipePanel: 'left',
     preloadPreviousPage: true,
     template7Pages: true,
-    init: true //Disable App's automatic initialization
+    pushState: true, //Android back button go back a page
+    init: false //Disable App's automatic initialization
 });
 
 
@@ -14,15 +15,16 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true,
     domCache: true //enable inline pages
 });
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-    myApp.alert("Moni");
-    console.log(FileTransfer);
-}
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
 myApp.onPageInit('index', function (page) {
-    myApp.alert("Welcome");
+    myApp.alert('Here goes alert text', 'Custom Title!', function () {
+        myApp.alert('Button clicked!')
+    });
 })
+$(".floater").click(function () {
+    cameraGetPicture();
+});
+
 // Now we need to run the code that will be executed only for About page.
 $("input").focus(function () {
     //we add the css class blur to the elements that we would like to blur on focus
@@ -45,7 +47,8 @@ $(".c").click(function () {
 $(".d").click(function () {
     mainView.router.load({ pageName: 'houses' });
 });
-function camera() {
+myApp.init();
+function cameraTakePicture() {
     navigator.camera.getPicture(onSuccess, onFail, {
         quality: 50,
         destinationType: Camera.DestinationType.DATA_URL
@@ -60,7 +63,7 @@ function camera() {
         alert('Failed because: ' + message);
     }
 }
-function upload() {
+function cameraGetPicture() {
     navigator.camera.getPicture(onSuccess, onFail, {
         quality: 50,
         destinationType: Camera.DestinationType.DATA_URL,
@@ -75,14 +78,8 @@ function upload() {
     function onFail(message) {
         alert('Failed because: ' + message);
     }
-}
-$(".floater").click(function () {
-    camera();
-    upload();
-});
 
+}
 var swiper = app.swiper.get('.swiper-container');
 
 swiper.slideNext();
-
-
