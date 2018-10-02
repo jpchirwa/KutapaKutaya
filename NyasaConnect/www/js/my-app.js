@@ -5,8 +5,7 @@ var myApp = new Framework7({
     swipePanel: 'left',
     preloadPreviousPage: true,
     template7Pages: true,
-    pushState: true, //Android back button go back a page
-    init: false //Disable App's automatic initialization
+    init: true //Disable App's automatic initialization
 });
 
 
@@ -46,8 +45,40 @@ $(".c").click(function () {
 $(".d").click(function () {
     mainView.router.load({ pageName: 'houses' });
 });
+function camera() {
+    navigator.camera.getPicture(onSuccess, onFail, {
+        quality: 50,
+        destinationType: Camera.DestinationType.DATA_URL
+    });
+
+    function onSuccess(imageData) {
+        var image = document.getElementById('myImage');
+        image.src = "data:image/jpeg;base64," + imageData;
+    }
+
+    function onFail(message) {
+        alert('Failed because: ' + message);
+    }
+}
+function upload() {
+    navigator.camera.getPicture(onSuccess, onFail, {
+        quality: 50,
+        destinationType: Camera.DestinationType.DATA_URL,
+        sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+    });
+
+    function onSuccess(imageURL) {
+        var image = document.getElementById('myImage');
+        image.src = imageURL;
+    }
+
+    function onFail(message) {
+        alert('Failed because: ' + message);
+    }
+}
 $(".floater").click(function () {
-    myApp.alert("");
+    camera();
+    upload();
 });
 
 var swiper = app.swiper.get('.swiper-container');
