@@ -22,7 +22,8 @@ myApp.onPageInit('index', function (page) {
     });
 })
 $(".floater").click(function () {
-    getImage();
+    //getImage();
+    openBrowser();
 });
 
 // Now we need to run the code that will be executed only for About page.
@@ -106,7 +107,7 @@ function uploadPhoto(imageURI) {
     options.chunkedMode = false;
 
     var ft = new FileTransfer();
-    ft.upload(imageURI, "http://192.168.1.103/phonegap/upload/upload.php",
+    ft.upload(imageURI, "http://192.168.1.104/phonegap/upload/upload.php",
         function (result) {
             console.log(JSON.stringify(result));
         },
@@ -114,7 +115,33 @@ function uploadPhoto(imageURI) {
             console.log(JSON.stringify(error));
         }, options);
 }
+function openBrowser() {
+    var url = 'http://192.168.1.103/phonegap/upload/trial.php';
+    var target = '_blank';
+    var options = "location = yes"
+    var ref = cordova.InAppBrowser.open(url, target, options);
 
+    ref.addEventListener('loadstart', loadstartCallback);
+    ref.addEventListener('loadstop', loadstopCallback);
+    ref.addEventListener('loaderror', loaderrorCallback);
+    ref.addEventListener('exit', exitCallback);
+
+    function loadstartCallback(event) {
+        console.log('Loading started: ' + event.url)
+    }
+
+    function loadstopCallback(event) {
+        console.log('Loading finished: ' + event.url)
+    }
+
+    function loaderrorCallback(error) {
+        console.log('Loading error: ' + error.message)
+    }
+
+    function exitCallback() {
+        console.log('Browser is closed...')
+    }
+}
 var swiper = app.swiper.get('.swiper-container');
 
 swiper.slideNext();
