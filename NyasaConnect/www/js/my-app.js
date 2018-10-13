@@ -118,8 +118,7 @@ function uploadPhoto(imageURI) {
 function openBrowser() {
     var url = 'http://192.168.1.103/phonegap/upload/trial.php';
     var target = '_blank';
-    var options = "location = yes"
-    var ref = cordova.InAppBrowser.open(url, target, options);
+    var ref = cordova.InAppBrowser.open(url, target, 'location=no,hidden=no,zoom=no');
 
     ref.addEventListener('loadstart', loadstartCallback);
     ref.addEventListener('loadstop', loadstopCallback);
