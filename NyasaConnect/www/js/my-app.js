@@ -1,5 +1,4 @@
 var $$ = Dom7;
-
 // Initialize app
 var myApp = new Framework7({
     swipePanel: 'left',
@@ -17,13 +16,17 @@ var mainView = myApp.addView('.view-main', {
 });
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
 myApp.onPageInit('index', function (page) {
-    myApp.alert('Here goes alert text', 'Custom Title!', function () {
-        myApp.alert('Button clicked!')
-    });
+    //myApp.alert('Here goes alert text', 'Custom Title!', function () {
+        //myApp.alert('Button clicked!')
+    //});
 })
+// Handle Cordova Device Ready Event
+$$(document).on('deviceready', function deviceIsReady() {
+    alert('Device is ready!');
+});
 $(".floater").click(function () {
-    //getImage();
-    openBrowser();
+    getImage();
+    //openBrowser();
 });
 
 // Now we need to run the code that will be executed only for About page.
@@ -38,6 +41,7 @@ $("input").focus(function () {
     });
 $(".a").click(function () {
     mainView.router.load({ pageName: 'cars' });
+    openBrowser();
 });
 $(".b").click(function () {
     mainView.router.load({ pageName: 'electronics' });
@@ -107,7 +111,7 @@ function uploadPhoto(imageURI) {
     options.chunkedMode = false;
 
     var ft = new FileTransfer();
-    ft.upload(imageURI, "http://192.168.1.104/phonegap/upload/upload.php",
+    ft.upload(imageURI, "http://192.168.0.33/phonegap/upload/upload.php",
         function (result) {
             console.log(JSON.stringify(result));
         },
@@ -116,7 +120,7 @@ function uploadPhoto(imageURI) {
         }, options);
 }
 function openBrowser() {
-    var url = 'http://192.168.1.103/phonegap/upload/trial.php';
+    var url = 'http://192.168.0.33/phonegap/upload/trial.php';
     var target = '_blank';
     var ref = cordova.InAppBrowser.open(url, target, 'location=no,hidden=no,zoom=no');
 
@@ -141,6 +145,7 @@ function openBrowser() {
         console.log('Browser is closed...')
     }
 }
+
 var swiper = app.swiper.get('.swiper-container');
 
 swiper.slideNext();

@@ -16,6 +16,8 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <preference name="AndroidLaunchMode" value="singleTop" />
+        <preference name="android-minSdkVersion" value="19" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -92,6 +94,7 @@
     <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
     <plugin name="cordova-plugin-file" spec="~6.0.1" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
+    <plugin name="cordova-plugin-ms-azure-mobile-apps" spec="^2.0.2" />
     <engine name="ios" spec="^4.5.5" />
     <engine name="windows" spec="^6.0.0" />
     <engine name="browser" spec="^5.0.4" />
