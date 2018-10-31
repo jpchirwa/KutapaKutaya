@@ -1,23 +1,21 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <title>Kutapa Kutaya Mw</title>
     <script src="js/jquery-3.3.1.min.js"></script>
-    <!--<link rel="stylesheet" href="lib/framework7/css/framework7.ios.css">
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.css">-->
     <link rel="stylesheet" href="lib/framework7/css/framework7.material.colors.css">
     <link rel="stylesheet" href="lib/framework7-icons/css/framework7-icons.css">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="stylesheet" href="lib/framework7/css/framework7.material.css">
-    <title>Kutapa Kutaya Mw</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-    <body>
-        <!-- Status bar overlay for full screen mode (PhoneGap) -->
+<body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
     <div class="statusbar-overlay"></div>
 
     <!-- Panels overlay-->
@@ -88,6 +86,33 @@
                         </div>
                     </div>
                 </div>
+                <div class="page cached" data-page="upload">
+                    <div class="page-content">
+                        <div class="content-block-title">
+                            <a href="#index" class="back"> Go back to home page </a>
+                        </div>
+                        <div class="content-block">
+                            <div class="block">
+                                <form method="POST" action="http://192.168.1.104:8080/phonegap/upload/trial.php" enctype="multipart/form-data">
+                                    <input type="hidden" name="size" value="1000000">
+                                    <div>
+                                        <input type="file" name="image">
+                                    </div>
+                                    <div>
+                                        <textarea id="text"
+                                                  cols="40"
+                                                  rows="4"
+                                                  name="image_text"
+                                                  placeholder="Say something about this image..."></textarea>
+                                    </div>
+                                    <div>
+                                        <button type="submit" name="upload">POST</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        </div>
+                </div>
                 <div class="page cached" data-page="cars">
                     <div class="page-content">
                         <h3>Search Results</h3>
@@ -139,6 +164,7 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
-    </body>
+    
+</body>
 
 </html>

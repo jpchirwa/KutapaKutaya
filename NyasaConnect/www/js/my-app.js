@@ -17,15 +17,16 @@ var mainView = myApp.addView('.view-main', {
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
 myApp.onPageInit('index', function (page) {
     //myApp.alert('Here goes alert text', 'Custom Title!', function () {
-        //myApp.alert('Button clicked!')
+    //myApp.alert('Button clicked!')
     //});
-})
+});
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function deviceIsReady() {
-    alert('Device is ready!');
+    //alert('Device is ready!');
 });
 $(".floater").click(function () {
-    getImage();
+    mainView.router.load({ pageName: 'upload' });
+    //getImage();
     //openBrowser();
 });
 
@@ -90,7 +91,7 @@ var camearaOptions = {
     quality: 100,
     destinationType: navigator.camera.DestinationType.FILE_URI,
     sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
-}
+};
 function getImage() {
     navigator.camera.getPicture(uploadPhoto, onError, camearaOptions);
 }
@@ -120,7 +121,7 @@ function uploadPhoto(imageURI) {
         }, options);
 }
 function openBrowser() {
-    var url = 'http://192.168.0.33/phonegap/upload/trial.php';
+    var url = 'http://192.168.1.104:8080/phonegap/upload/trial.php';
     var target = '_blank';
     var ref = cordova.InAppBrowser.open(url, target, 'location=no,hidden=no,zoom=no');
 
@@ -130,19 +131,19 @@ function openBrowser() {
     ref.addEventListener('exit', exitCallback);
 
     function loadstartCallback(event) {
-        console.log('Loading started: ' + event.url)
+        console.log('Loading started: ' + event.url);
     }
 
     function loadstopCallback(event) {
-        console.log('Loading finished: ' + event.url)
+        console.log('Loading finished: ' + event.url);
     }
 
     function loaderrorCallback(error) {
-        console.log('Loading error: ' + error.message)
+        console.log('Loading error: ' + error.message);
     }
 
     function exitCallback() {
-        console.log('Browser is closed...')
+        console.log('Browser is closed...');
     }
 }
 
