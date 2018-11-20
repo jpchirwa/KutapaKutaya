@@ -39,42 +39,10 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-ms-azure-mobile-apps": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-ms-azure-mobile-apps"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-sqlite-storage": {
     "source": {
       "type": "registry",
       "id": "cordova-sqlite-storage@2.2.0"
-    },
-    "is_top_level": false,
-    "variables": {}
-  },
-  "cordova-plugin-firebase": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-firebase"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-support-android-plugin": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-support-android-plugin@~1.0.0"
-    },
-    "is_top_level": false,
-    "variables": {}
-  },
-  "cordova-support-google-services": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-support-google-services@~1.2.0"
     },
     "is_top_level": false,
     "variables": {}

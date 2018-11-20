@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="lib/framework7-icons/css/framework7-icons.css">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="stylesheet" href="lib/framework7/css/framework7.material.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -93,7 +91,7 @@
                         </div>
                         <div class="content-block">
                             <div class="block">
-                                <form method="POST" action="http://192.168.1.104:8080/phonegap/upload/trial.php" enctype="multipart/form-data">
+                                <form method="POST" action="http://192.168.1.103/phonegap/upload/trial.php" enctype="multipart/form-data">
                                     <input type="hidden" name="size" value="1000000">
                                     <div>
                                         <input type="file" name="image">
@@ -104,6 +102,20 @@
                                                   rows="4"
                                                   name="image_text"
                                                   placeholder="Say something about this image..."></textarea>
+                                    </div>
+                                    <div>
+                                        <textarea id="text"
+                                                  cols="30"
+                                                  rows="1"
+                                                  name="image_location"
+                                                  placeholder="Set item location..."></textarea>
+                                    </div>
+                                    <div>
+                                        <textarea id="text"
+                                                  cols="30"
+                                                  rows="1"
+                                                  name="image_price"
+                                                  placeholder="Set the price..."></textarea>
                                     </div>
                                     <div>
                                         <button type="submit" name="upload">POST</button>

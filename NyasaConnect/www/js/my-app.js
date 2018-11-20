@@ -112,7 +112,7 @@ function uploadPhoto(imageURI) {
     options.chunkedMode = false;
 
     var ft = new FileTransfer();
-    ft.upload(imageURI, "http://192.168.0.33/phonegap/upload/upload.php",
+    ft.upload(imageURI, "http://192.168.1.103/phonegap/upload/upload.php",
         function (result) {
             console.log(JSON.stringify(result));
         },
@@ -121,7 +121,7 @@ function uploadPhoto(imageURI) {
         }, options);
 }
 function openBrowser() {
-    var url = 'http://192.168.1.104:8080/phonegap/upload/trial.php';
+    var url = 'http://192.168.1.103/phonegap/upload/trial.php';
     var target = '_blank';
     var ref = cordova.InAppBrowser.open(url, target, 'location=no,hidden=no,zoom=no');
 
