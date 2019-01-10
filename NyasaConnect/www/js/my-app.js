@@ -1,6 +1,7 @@
 var $$ = Dom7;
 // Initialize app
 var myApp = new Framework7({
+  // Enable swipe panel
     swipePanel: 'left',
     preloadPreviousPage: true,
     template7Pages: true,
@@ -22,9 +23,12 @@ myApp.onPageInit('index', function (page) {
 });
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function deviceIsReady() {
+    if (StatusBar.isVisible) {
+        StatusBar.hide();
+    }
     //alert('Device is ready!');
 });
-$(".floater").click(function () {
+$(".floater").click(function () {    
     mainView.router.load({ pageName: 'upload' });
     //getImage();
     //openBrowser();
@@ -41,10 +45,27 @@ $("input").focus(function () {
     $("p").removeClass("blur");
     });
 $(".a").click(function () {
-    mainView.router.load({ pageName: 'cars' });
     openBrowser();
+    //var jpgcontainer = document.getElementById('jpg');
+    //var pngcontainer = document.getElementById('png');
+    //var files = {
+    //    'jpg': 5
+    //};
+
+    //for (var jpgext in files) {
+    //    for (var i = 0; i < files.length; i++) {
+    //        var jpgsrc = "http://www.bizadz.hostingerapp.com/images/" + (i + 1) + "." + jpgext;
+    //        var jpgimg = new Image();
+    //        jpgimg.src = jpgsrc;
+    //        jpgcontainer.appendChild(jpgimg);
+    //    }
+    //}
+    //mainView.router.load({ pageName: 'cars' });
 });
 $(".b").click(function () {
+    $$.get('http://bizadz.hostingerapp.com/electronics.php', {}, function (data) {
+        $$('#PAGEPlaceHolder').html(data);
+    }); 
     mainView.router.load({ pageName: 'electronics' });
 });
 $(".c").click(function () {
@@ -121,7 +142,7 @@ function uploadPhoto(imageURI) {
         }, options);
 }
 function openBrowser() {
-    var url = 'http://192.168.1.103/phonegap/upload/trial.php';
+    var url = 'http://www.bizadz.hostingerapp.com';
     var target = '_blank';
     var ref = cordova.InAppBrowser.open(url, target, 'location=no,hidden=no,zoom=no');
 
