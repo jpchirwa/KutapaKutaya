@@ -1,7 +1,6 @@
 var $$ = Dom7;
 // Initialize app
 var myApp = new Framework7({
-  // Enable swipe panel
     swipePanel: 'left',
     preloadPreviousPage: true,
     template7Pages: true,
@@ -62,11 +61,35 @@ $(".a").click(function () {
     //}
     //mainView.router.load({ pageName: 'cars' });
 });
-$(".b").click(function () {
+function getelectronics() {
     $$.get('http://bizadz.hostingerapp.com/electronics.php', {}, function (data) {
         $$('#PAGEPlaceHolder').html(data);
-    }); 
-    mainView.router.load({ pageName: 'electronics' });
+    });
+}
+$(".b").click(function () {
+    var container = $$('.demo-progressbar-load-hide p:first-child');
+    if (container.children('.progressbar').length) return; //don't run all this if there is a current progressbar loading
+ 
+    myApp.showProgressbar(container, 0);
+ 
+    // Simluate Loading Something
+    var progress = 0;
+    function simulateLoading() {
+        setTimeout(function () {
+            var progressBefore = progress;
+            progress += Math.random() * 5;
+            myApp.setProgressbar(container, progress);
+            if (progressBefore < 100) {
+                simulateLoading(); //keep "loading"
+                $("#PAGEPlaceHolder").hide();
+            }
+            else myApp.hideProgressbar(container);//hide
+            getelectronics();
+            $("#PAGEPlaceHolder").show("");
+            mainView.router.load({ pageName: 'electronics' });
+        }, Math.random() * 50 + 10);
+    }
+    simulateLoading();
 });
 $(".c").click(function () {
     mainView.router.load({ pageName: 'clothes' });
