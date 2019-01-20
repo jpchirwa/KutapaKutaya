@@ -1,12 +1,13 @@
-var $$ = Dom7;
-// Initialize app
+﻿// Initialize app
 var myApp = new Framework7({
+    material: true,
     swipePanel: 'left',
     preloadPreviousPage: true,
     template7Pages: true,
     pushState: true, //Android back button go back a page
-    init: false //Disable App's automatic initialization
+    init: false, //Disable App's automatic initialization
 });
+
 
 
 // Add view
@@ -14,6 +15,8 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true,
     domCache: true //enable inline pages
 });
+
+var $$ = Dom7;
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
 myApp.onPageInit('index', function (page) {
     //myApp.alert('Here goes alert text', 'Custom Title!', function () {
@@ -25,12 +28,20 @@ $$(document).on('deviceready', function deviceIsReady() {
     if (StatusBar.isVisible) {
         StatusBar.hide();
     }
-    //alert('Device is ready!');
 });
-$(".floater").click(function () {    
+$(".floater").click(function () {
+    myApp.addNotification({
+        title: 'Place your Ad',
+        message: 'Welcome to Malawis first online trading platform with over a thousand items up for sale, enjoy your experience',
+        button: {
+            text: 'Close Me',
+            color: 'red',
+            close: true
+        },
+        onClose: function () {
+        }
+    });
     mainView.router.load({ pageName: 'upload' });
-    //getImage();
-    //openBrowser();
 });
 
 // Now we need to run the code that will be executed only for About page.
@@ -44,26 +55,58 @@ $("input").focus(function () {
     $("p").removeClass("blur");
     });
 $(".a").click(function () {
-    openBrowser();
-    //var jpgcontainer = document.getElementById('jpg');
-    //var pngcontainer = document.getElementById('png');
-    //var files = {
-    //    'jpg': 5
-    //};
-
-    //for (var jpgext in files) {
-    //    for (var i = 0; i < files.length; i++) {
-    //        var jpgsrc = "http://www.bizadz.hostingerapp.com/images/" + (i + 1) + "." + jpgext;
-    //        var jpgimg = new Image();
-    //        jpgimg.src = jpgsrc;
-    //        jpgcontainer.appendChild(jpgimg);
-    //    }
-    //}
-    //mainView.router.load({ pageName: 'cars' });
+    mainview.router.load({ pagename: 'cars' });
 });
+document.getElementById("filesa").onchange = function () {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("imagea").src = e.target.result;
+        document.getElementById("imagea").style.display = "block"; 
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+};
+document.getElementById("filesb").onchange = function () {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("imageb").src = e.target.result;
+        document.getElementById("imageb").style.display = "block";
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+};
+document.getElementById("filesc").onchange = function () {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("imagec").src = e.target.result;
+        document.getElementById("imagec").style.display = "block";
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+};
 function getelectronics() {
     $$.get('http://bizadz.hostingerapp.com/electronics.php', {}, function (data) {
         $$('#PAGEPlaceHolder').html(data);
+    });
+}
+function submit() {
+    $$.get('http://bizadz.hostingerapp.com/display.php', {}, function (data) {
+        $$('#PAGEPlaceHolderItem').html(data);
+    });
+}
+function displays() {
+    alert();
+    $$.get('http://bizadz.hostingerapp.com/displayCopy.php', {}, function (data) {
+        $$('#PAGEPlaceHolderItem2').html(data);
     });
 }
 $(".b").click(function () {
@@ -97,100 +140,24 @@ $(".c").click(function () {
 $(".d").click(function () {
     mainView.router.load({ pageName: 'houses' });
 });
+$(".submit").click(function () {
+    myApp.addNotification({
+        title: 'My Awesome App',
+        subtitle: 'New message from John Doe',
+        message: 'Hello, how are you? ',
+        media: '<img width="44" height="44" style="border-radius:100%" src="http://lorempixel.com/output/people-q-c-100-100-9.jpg">',
+        onClose: function () {
+            submit();
+            mainView.router.load({ pageName: 'displayitem' });
+        }
+    });
+});
 myApp.init();
-function cameraTakePicture() {
-    navigator.camera.getPicture(onSuccess, onFail, {
-        quality: 100,
-        destinationType: Camera.DestinationType.DATA_URL
+function Dialog() {
+    myApp.alert('Here goes alert text', 'Custom Title!', function () {
+        myApp.alert('Button clicked!')
     });
-
-    function onSuccess(imageData) {
-        var image = document.getElementById('myImage');
-        image.src = "data:image/jpeg;base64," + imageData;
-    }
-
-    function onFail(message) {
-        alert('Failed because: ' + message);
-    }
 }
-function cameraGetPicture() {
-    navigator.camera.getPicture(onSuccess, onFail, {
-        quality: 50,
-        destinationType: Camera.DestinationType.DATA_URL,
-        sourceType: Camera.PictureSourceType.PHOTOLIBRARY
-    });
-
-    function onSuccess(imageURL) {
-        var image = document.getElementById('myImage');
-        image.src = imageURL;
-    }
-
-    function onFail(message) {
-        alert('Failed because: ' + message);
-    }
-
-}
-
-var camearaOptions = {
-    quality: 100,
-    destinationType: navigator.camera.DestinationType.FILE_URI,
-    sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
-};
-function getImage() {
-    navigator.camera.getPicture(uploadPhoto, onError, camearaOptions);
-}
-
-function onError(err) { alert(error); }
-
-function uploadPhoto(imageURI) {
-    var options = new FileUploadOptions();
-    options.fileKey = "file";
-    options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
-    options.mimeType = "image/jpeg";
-
-    var params = new Object();
-    params.value1 = "test";
-    params.value2 = "param";
-
-    options.params = params;
-    options.chunkedMode = false;
-
-    var ft = new FileTransfer();
-    ft.upload(imageURI, "http://192.168.1.103/phonegap/upload/upload.php",
-        function (result) {
-            console.log(JSON.stringify(result));
-        },
-        function (error) {
-            console.log(JSON.stringify(error));
-        }, options);
-}
-function openBrowser() {
-    var url = 'http://www.bizadz.hostingerapp.com';
-    var target = '_blank';
-    var ref = cordova.InAppBrowser.open(url, target, 'location=no,hidden=no,zoom=no');
-
-    ref.addEventListener('loadstart', loadstartCallback);
-    ref.addEventListener('loadstop', loadstopCallback);
-    ref.addEventListener('loaderror', loaderrorCallback);
-    ref.addEventListener('exit', exitCallback);
-
-    function loadstartCallback(event) {
-        console.log('Loading started: ' + event.url);
-    }
-
-    function loadstopCallback(event) {
-        console.log('Loading finished: ' + event.url);
-    }
-
-    function loaderrorCallback(error) {
-        console.log('Loading error: ' + error.message);
-    }
-
-    function exitCallback() {
-        console.log('Browser is closed...');
-    }
-}
-
 var swiper = app.swiper.get('.swiper-container');
 
 swiper.slideNext();

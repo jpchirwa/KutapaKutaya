@@ -2,202 +2,431 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1,maximum-scale = 1, minimum-scale = 1, user-scalable = no, minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <title>Kutapa Kutaya Mw</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/css/framework7.ios.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/css/framework7.ios.colors.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/css/framework7.material.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/css/framework7.material.colors.min.css" />
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.css">
     <link rel="stylesheet" href="lib/framework7/css/framework7.material.colors.css">
     <link rel="stylesheet" href="lib/framework7-icons/css/framework7-icons.css">
     <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; media-src *; img-src * filesystem: data:">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-    <link rel="stylesheet" href="lib/framework7/css/framework7.material.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-        <!-- Status bar overlay for full screen mode (PhoneGap) -->
-        <div class="statusbar-overlay"></div>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
 
-        <!-- Panels overlay-->
-        <div class="panel-overlay"></div>
-        <!-- Left panel with reveal effect-->
-        <div class="panel panel-left panel-reveal">
-            <div class="content-block">
-                <p>Left panel content goes here</p>
-            </div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+        <div class="content-block">
+            <p>Left panel content goes here</p>
         </div>
+    </div>
 
-        <!-- Views -->
-        <div class="views tabs toolbar-through">
-            <!-- Your main view, should have "view-main" class -->
-            <div class="view view-main">
-                <!-- Top Navbar-->
-                <div class="navbar theme-amber">
-                    <div class="navbar-inner" data-page="index">
-                        <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                        <div class="center sliding" id="title"><center>Kutapa Kutaya Mw</center></div>
-                        <div class="right">
-                            <!--
+    <!-- Views -->
+    <div class="views tabs toolbar-through">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar theme-amber">
+                <div class="navbar-inner" data-page="index">
+                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                    <div class="center sliding" id="title"><center>Kutapa Kutaya Mw</center></div>
+                    <div class="right">
+                        <!--
                           Right link contains only icon - additional "icon-only" class
                           Additional "open-panel" class tells app to open panel when we click on this link
                         -->
-                            <a href="#" class="link icon-only open-panel"><i class="f7-icons">home_fill</i></a> <!--font cheat sheet-->
+                        <a href="#" class="link icon-only open-panel"><i class="f7-icons">home_fill</i></a> <!--font cheat sheet-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="floater">
+                <a href="#" class="floating-button color-orange">
+                    <i class="icon icon-plus"></i>
+                </a>
+            </div>
+
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page color-black">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div id="Banner">
+                            <img src="Images/background.jpg" />
+                        </div>
+                        <div class="content-block">
+                            <div id="Search">
+                                <input type="text" name="search" placeholder="Search..">
+                            </div>
+                            <div class="container">
+                                <h1>Browse Items</h1>
+                                <div class="text-block">
+                                    <div class="relative">
+                                        <div class="a">
+                                            <i class="icon tabbar-demo-icon-1"></i><span class="tabbar-label"></span><figcaption id="figcaption">Cars</figcaption>
+                                        </div>
+                                        <div class="b">
+                                            <i class="icon tabbar-demo-icon-2"></i><span class="tabbar-label"></span><figcaption id="figcaption">Electronics</figcaption>
+                                        </div>
+                                        <div class="c">
+                                            <i class="icon tabbar-demo-icon-3"></i><span class="tabbar-label"></span><figcaption id="figcaption">Clothes</figcaption>
+                                        </div>
+                                        <div class="d">
+                                            <i class="icon tabbar-demo-icon-4"></i><span class="tabbar-label"></span><figcaption id="figcaption">Houses</figcaption>
+                                        </div>
+                                        <div class="e">
+                                            <i class="icon tabbar-demo-icon-5"></i><span class="tabbar-label"></span><figcaption id="figcaption">Services</figcaption>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="floater">
-                    <a href="#" class="floating-button color-orange">
-                        <i class="icon icon-plus"></i>
-                    </a>
-                </div>
-                <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-                <div class="pages navbar-through toolbar-through">
-                    <!-- Page, "data-page" contains page name -->
-                    <div data-page="index" class="page color-black">
-                        <!-- Scrollable page content -->
-                        <div class="page-content">
-                            <h2><b>Browse</b></h2>
-                            <div id="Banner">
-                                <img src="Images/background.jpg" />
-                            </div>
-                            <div class="content-block">
-                                <div id="Search">
-                                    <input type="text" name="search" placeholder="Search..">
-                                </div>
+                <div class="page cached" data-page="upload">
+                    <div class="page-content">
+                        <div class="content-block">
+                            <h2>Place Ad</h2> <i class="icon tabbar-demo-icon-4"></i><span class="tabbar-label"></span><figcaption id="figcaptionPlacedAd">Houses</figcaption>
+                            <form method="POST" class="list-block" action="http://bizadz.hostingerapp.com/uploadtrial.php" enctype="multipart/form-data" target="hidden-form">
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label"><h2>Add Photos</h2></div>
+                                                <div class="buttons-row">
+                                                    <img id="imagea" style="display:none;" />
+                                                    <img id="imageb" style="display:none;" />
+                                                    <img id="imagec" style="display:none;" />
+                                                </div>
+                                                <div class="item-input">
+                                                    <div class="uploadimage">
+                                                        <label class="custom-file-upload">
+                                                            <input type="file" name="imagea" id="filesa" required accept="image/*">
+                                                            Add 1st Photo(Required)
+                                                        </label>
+                                                    </div>
+                                                    <br />
+                                                </div>
+                                                <div class="item-input">
+                                                    <div class="uploadimage">
+                                                        <label class="custom-file-upload">
+                                                            <input type="file" name="imageb" id="filesb" accept="image/*">
+                                                            Add 2nd Photo(Optional)
+                                                        </label>
+                                                    </div>
+                                                    <br />
+                                                </div>
+                                                <div class="item-input">
+                                                    <div class="uploadimage">
+                                                        <label class="custom-file-upload">
+                                                            <input type="file" name="imagec" id="filesc" accept="image/*">
+                                                            Add 3rd Photo(optional)
+                                                        </label>
+                                                    </div>
+                                                    <br />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">Item Type</div>
+                                                <div class="item-input">
+                                                    <div class="list-block">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#" class="item-link smart-select" data-back-on-select="true">
+                                                                    <select name="category">
+                                                                        <option value="House" selected data-option-image="Images/house.jpg">Houses</option>
+                                                                        <option value="Electronics" data-option-image="Images/electricals.jpg">Electronics</option>
+                                                                        <option value="Cars" data-option-image="Images/car.jpg">Cars</option>
+                                                                        <option value="Clothes" data-option-image="Images/clothesa.jpg">Clothes</option>
+                                                                    </select>
+                                                                    <div class="item-content">
+                                                                        <div class="item-inner">
+                                                                            <div class="item-title">Choose Category</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">Item Title</div>
+                                                <div class="item-input">
+                                                    <input type="text" autocapitalize=words name="title" placeholder="Item Title" required maxlength="30">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">Item Price (MK)</div>
+                                                <div class="item-input">
+                                                    <input type="text" name="price" placeholder="Item Price/Ntengo" required maxlength="8">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">Item Description</div>
+                                                <div class="item-input">
+                                                    <textarea name="description" cols="40" rows="7" required maxlength="200" autocapitalize=sentences placeholder="Tell us about the item you are selling"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <br />
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">Name</div>
+                                                <div class="item-input">
+                                                    <input type="text" name="name" autocapitalize=words maxlength="20" placeholder="Your name" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">Phone</div>
+                                                <div class="item-input">
+                                                    <input type="text" name="phone" maxlength="10" placeholder="Phone Number" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label"><h3>Location</h3></div>
+                                                <div class="item-input">
+                                                    <div class="list-block">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#" class="item-link smart-select" data-searchbar="true" data-searchbar-placeholder="Search location/Muli kuti">
+                                                                    <!-- "multiple" attribute for multiple select-->
+                                                                    <select name="location" single>
+                                                                        <!-- options grouped within "optgroup" tag-->
+                                                                        <optgroup label="Your Location">
+                                                                            <option value="Blantyre">Blantyre</option>
+                                                                            <option value="Lilongwe" selected>Lilongwe</option>
+                                                                            <option value="Mzuzu">Mzuzu</option>
+                                                                            <option value="Karonga">Karonga</option>
+                                                                            <option value="Likoma">Likoma</option>
+                                                                            <option value="Mzimba">Mzimba</option>
+                                                                            <option value="Nkhata Bay">Nkhata Bay</option>
+                                                                            <option value="Rumphi">Rumphi</option>
+                                                                            <option value="Dedza">Dedza</option>
+                                                                            <option value="Dowa">Dowa</option>
+                                                                            <option value="Kasungu">Kasungu</option>
+                                                                            <option value="Mchinji">Mchinji</option>
+                                                                            <option value="Nkhotakota">Nkhotakota</option>
+                                                                            <option value="Ntcheu">Ntcheu</option>
+                                                                            <option value="Ntchisi">Ntchisi</option>
+                                                                            <option value="Salima">Salima</option>
+                                                                            <option value="Balaka">Balaka</option>
+                                                                            <option value="Chikwawa">Chikwawa</option>
+                                                                            <option value="Chiradzulu">Chiradzulu</option>
+                                                                            <option value="Machinga">Machinga</option>
+                                                                            <option value="Mangochi">Mangochi</option>
+                                                                            <option value="Mulanje">Mulanje</option>
+                                                                            <option value="Mwanza">Mwanza</option>
+                                                                            <option value="Nsanje">Nsanje</option>
+                                                                            <option value="Thyolo">Thyolo</option>
+                                                                            <option value="Phalombe">Phalombe</option>
+                                                                            <option value="Zomba">Zomba</option>
+                                                                            <option value="Neno">Neno</option>
+                                                                        </optgroup>
+                                                                    </select>
+                                                                    <div class="item-content">
+                                                                        <div class="item-inner">
+                                                                            <div class="item-title">Select Your location</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label"><h3>Item Availability</h3></div>
+                                                <div class="item-input">
+                                                    <div class="list-block">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#" class="item-link smart-select">
+                                                                    <!-- "multiple" attribute for multiple select-->
+                                                                    <select name="availability[]" multiple>
+                                                                        <!-- options grouped within "optgroup" tag-->
+                                                                        <optgroup label="Northern Region">
+                                                                            <option value="Mzuzu" selected>Mzuzu</option>
+                                                                            <option value="Karonga">Karonga</option>
+                                                                            <option value="Likoma">Likoma</option>
+                                                                            <option value="Mzimba">Mzimba</option>
+                                                                            <option value="Nkhata Bay">Nkhata Bay</option>
+                                                                            <option value="Rumphi">Rumphi</option>
+                                                                        </optgroup>
+                                                                        <optgroup label="Central Region">
+                                                                            <option value="Lilongwe" selected>Lilongwe</option>
+                                                                            <option value="Dedza">Dedza</option>
+                                                                            <option value="Dowa">Dowa</option>
+                                                                            <option value="Kasungu">Kasungu</option>
+                                                                            <option value="Mchinji">Mchinji</option>
+                                                                            <option value="Nkhotakota">Nkhotakota</option>
+                                                                            <option value="Ntcheu">Ntcheu</option>
+                                                                            <option value="Ntchisi">Ntchisi</option>
+                                                                            <option value="Salima">Salima</option>
+                                                                        </optgroup>
+                                                                        <optgroup label="Southern Region">
+                                                                            <option value="Blantyre" selected>Blantyre</option>
+                                                                            <option value="Balaka">Balaka</option>
+                                                                            <option value="Chikwawa">Chikwawa</option>
+                                                                            <option value="Chiradzulu">Chiradzulu</option>
+                                                                            <option value="Machinga">Machinga</option>
+                                                                            <option value="Mangochi">Mangochi</option>
+                                                                            <option value="Mulanje">Mulanje</option>
+                                                                            <option value="Mwanza">Mwanza</option>
+                                                                            <option value="Nsanje">Nsanje</option>
+                                                                            <option value="Thyolo">Thyolo</option>
+                                                                            <option value="Phalombe">Phalombe</option>
+                                                                            <option value="Zomba">Zomba</option>
+                                                                            <option value="Neno">Neno</option>
+                                                                        </optgroup>
+                                                                    </select>
+                                                                    <div class="item-content">
+                                                                        <div class="item-inner">
+                                                                            <div class="item-title">Select Districts(optional)</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
                                 <div class="container">
-                                    <h1>Browse Items</h1>
-                                    <div class="text-block">
-                                        <div class="relative">
-                                            <div class="a">
-                                                <i class="icon tabbar-demo-icon-1"></i><span class="tabbar-label"></span><figcaption id="figcaption">Cars</figcaption>
-                                            </div>
-                                            <div class="b">
-                                                <i class="icon tabbar-demo-icon-2"></i><span class="tabbar-label"></span><figcaption id="figcaption">Electronics</figcaption>
-                                            </div>
-                                            <div class="c">
-                                                <i class="icon tabbar-demo-icon-3"></i><span class="tabbar-label"></span><figcaption id="figcaption">Clothes</figcaption>
-                                            </div>
-                                            <div class="d">
-                                                <i class="icon tabbar-demo-icon-4"></i><span class="tabbar-label"></span><figcaption id="figcaption">Houses</figcaption>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <div class="submit"> <button class="btn" type="submit" name="upload">SELL ITEM</button></div>
                                 </div>
-                            </div>
+                            </form>
+                            <IFRAME style="display:none" name="hidden-form"></IFRAME>
                         </div>
                     </div>
-                    <div class="page cached" data-page="upload">
-                        <div class="page-content">
-                            <h3>Place Ads</h3>
-                            <div class="content-block">
-                                <h2>Place Ad</h2> <i class="icon tabbar-demo-icon-4"></i><span class="tabbar-label"></span><figcaption id="figcaption">Houses</figcaption>
-                                <form method="POST" action="http://bizadz.hostingerapp.com/upload.php" enctype="multipart/form-data">
-                                    <input type="hidden" name="size" value="1000000">
-                                    <div class="uploadimage">
-                                        <label class="custom-file-upload">
-                                            <input type="file" name="image">
-                                            Add Photos
-                                        </label>
-                                    </div>
-                                    <br />
-                                    <div class="details">
-                                        <div>
-                                            <textarea id="text"
-                                                      cols="40"
-                                                      rows="2"
-                                                      name="image_text"
-                                                      placeholder="Title" maxlength="15"></textarea>
-                                        </div>
-                                        <div>
-                                            <textarea id="text"
-                                                      cols="30"
-                                                      rows="1"
-                                                      name="image_location"
-                                                      placeholder="Location"></textarea>
-                                        </div>
-                                        <div>
-                                            <textarea id="text"
-                                                      cols="30"
-                                                      rows="1"
-                                                      name="image_price"
-                                                      placeholder="Price/Ntengo"></textarea>
-                                        </div>
-                                        <label for="district">Region</label>
-                                        <select id="district" name="region">
-                                            <option value="australia">Northern Region</option>
-                                            <option value="canada">Central Region</option>
-                                            <option value="usa">Southern Region</option>
-                                        </select>
-                                    </div>
-                                    <br />
-                                    <div class="container">
-                                        <button class="btn" type="submit" name="upload">SELL ITEM</button>
-                                    </div>
+                </div>
+                <div class="page cached" data-page="cars">
+                    <div class="page-content">
+                        <h3>Search Results</h3>
+                        <div class="contacts-content">
+                            <div id="Search">
+                                <input type="text" name="search" placeholder="Search and find..">
+                            </div>
+                            <a href="#index" class="back"> Go back to home page </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="page cached" data-page="displayitem">
+                    <div class="page-content">
+                        <h3>Search Results</h3>
+                        <div class="contacts-content">
+                            <div id="Search">
+                                <input type="text" name="search" placeholder="Search and find..">
+                            </div>
+                            <div class="demo-progressbar-load-hide">
+                                <p style="height:2px"></p>
+                            </div>
+                            <a href="#index" class="back"> Go back to home page </a>
+                            <div id="PAGEPlaceHolderItem">
+                            </div>
+                            <div id="PAGEPlaceHolderItem2">
 
-                                </form>
                             </div>
                         </div>
                     </div>
-                    <div class="page cached" data-page="cars">
-                        <div class="page-content">
-                            <h3>Search Results</h3>
-                            <div class="contacts-content">
-                                <div id="Search">
-                                    <input type="text" name="search" placeholder="Search and find..">
-                                </div>
-                                <a href="#index" class="back"> Go back to home page </a>
-                                
-                                <div id="imgcontainer">
-                                    <section id="jpg"></section>
-
-                                </div>
+                </div>
+                <div class="page cached" data-page="electronics">
+                    <div class="page-content">
+                        <h3>Search Results</h3>
+                        <div class="contacts-content">
+                            <div id="Search">
+                                <input type="text" name="search" placeholder="Search and find..">
+                            </div>
+                            <div class="demo-progressbar-load-hide">
+                                <p style="height:2px"></p>
+                            </div>
+                            <a href="#index" class="back"> Go back to home page </a>
+                            <div id="PAGEPlaceHolder" onclick="displays()">
                             </div>
                         </div>
                     </div>
-                    <div class="page cached" data-page="electronics">
-                        <div class="page-content">
-                            <h3>Search Results</h3>
-                            <div class="contacts-content">
-                                <div id="Search">
-                                    <input type="text" name="search" placeholder="Search and find..">
-                                </div>
-                                <div class="demo-progressbar-load-hide">
-                                    <p style="height:2px"></p>
-                                </div>
-                                <a href="#index" class="back"> Go back to home page </a>
-                                <div id="PAGEPlaceHolder">
-                                </div>
+                </div>
+                <div class="page cached" data-page="clothes">
+                    <div class="page-content">
+                        <h3>Search Results</h3>
+                        <div class="contacts-content">
+                            <div id="Search">
+                                <input type="text" name="search" placeholder="Search and find..">
                             </div>
+                            <a href="#index" class="back"> Go back to home page </a>
                         </div>
                     </div>
-                    <div class="page cached" data-page="clothes">
-                        <div class="page-content">
-                            <h3>Search Results</h3>
-                            <div class="contacts-content">
-                                <div id="Search">
-                                    <input type="text" name="search" placeholder="Search and find..">
-                                </div>
-                                <a href="#index" class="back"> Go back to home page </a>
+                </div>
+                <div class="page cached" data-page="houses">
+                    <div class="page-content">
+                        <h3>Search Results</h3>
+                        <div class="contacts-content">
+                            <div id="Search">
+                                <input type="text" name="search" placeholder="Search and find..">
                             </div>
-                        </div>
-                    </div>
-                    <div class="page cached" data-page="houses">
-                        <div class="page-content">
-                            <h3>Search Results</h3>
-                            <div class="contacts-content">
-                                <div id="Search">
-                                    <input type="text" name="search" placeholder="Search and find..">
-                                </div>
-                                <a href="#index" class="back"> Go back to home page </a>
-                            </div>
+                            <a href="#index" class="back"> Go back to home page </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/js/framework7.min.js"></script>
         <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
-        <script type="text/javascript" src="js/my-app.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
 </body>
 
 </html>
