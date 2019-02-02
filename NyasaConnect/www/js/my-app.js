@@ -99,17 +99,15 @@ function getelectronics() {
     });
 }
 function submit() {
-    $$.get('http://bizadz.hostingerapp.com/display.php', {}, function (data) {
+    $$.get('http://bizadz.hostingerapp.com/displayItem.php', {}, function (data) {
         $$('#PAGEPlaceHolderItem').html(data);
     });
 }
-function displays() {
-    alert();
-    $$.get('http://bizadz.hostingerapp.com/displayCopy.php', {}, function (data) {
-        $$('#PAGEPlaceHolderItem2').html(data);
-    });
-}
 $(".b").click(function () {
+    mainView.router.load({ pageName: 'electronics' });
+    getelectronics();
+});
+$(".btest").click(function () {
     var container = $$('.demo-progressbar-load-hide p:first-child');
     if (container.children('.progressbar').length) return; //don't run all this if there is a current progressbar loading
  
@@ -124,11 +122,9 @@ $(".b").click(function () {
             myApp.setProgressbar(container, progress);
             if (progressBefore < 100) {
                 simulateLoading(); //keep "loading"
-                $("#PAGEPlaceHolder").hide();
-            }
+               }
             else myApp.hideProgressbar(container);//hide
             getelectronics();
-            $("#PAGEPlaceHolder").show("");
             mainView.router.load({ pageName: 'electronics' });
         }, Math.random() * 50 + 10);
     }
@@ -158,6 +154,3 @@ function Dialog() {
         myApp.alert('Button clicked!')
     });
 }
-var swiper = app.swiper.get('.swiper-container');
-
-swiper.slideNext();

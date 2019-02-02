@@ -1,28 +1,28 @@
 {
-  "_from": "cordova-sqlite-storage@2.2.0",
-  "_id": "cordova-sqlite-storage@2.2.0",
+  "_from": "cordova-sqlite-storage",
+  "_id": "cordova-sqlite-storage@2.6.0",
   "_inBundle": false,
-  "_integrity": "sha512-PxmPVxum8Wqjb0J/dcAPm9nd+Or6m6GY6lsKwyHzvojm7rXut7tdDE3MUlgXDcXhtFAOTIcWpG2mGegLK+gmUg==",
+  "_integrity": "sha512-m+KylFwNRsQloJ6TZihupfma2muXkmNglh8cFSiJQqriTTm6eq0gyPaAuKxgoPswe679G+0aUai07NFC/f0GGQ==",
   "_location": "/cordova-sqlite-storage",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "tag",
     "registry": true,
-    "raw": "cordova-sqlite-storage@2.2.0",
+    "raw": "cordova-sqlite-storage",
     "name": "cordova-sqlite-storage",
     "escapedName": "cordova-sqlite-storage",
-    "rawSpec": "2.2.0",
+    "rawSpec": "",
     "saveSpec": null,
-    "fetchSpec": "2.2.0"
+    "fetchSpec": "latest"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/cordova-sqlite-storage/-/cordova-sqlite-storage-2.2.0.tgz",
-  "_shasum": "00b382af852d2e345c2c4aeea70b2bcd61db37f1",
-  "_spec": "cordova-sqlite-storage@2.2.0",
-  "_where": "C:\\Users\\johnp\\source\\repos\\NyasaConnect\\NyasaConnect",
+  "_resolved": "https://registry.npmjs.org/cordova-sqlite-storage/-/cordova-sqlite-storage-2.6.0.tgz",
+  "_shasum": "84f5c56509d83b8629338f863e027482afd7fdcd",
+  "_spec": "cordova-sqlite-storage",
+  "_where": "C:\\Users\\jchirwa\\Source\\Repos\\KutapaKutaya\\NyasaConnect",
   "author": {
     "name": "various"
   },
@@ -40,7 +40,7 @@
     ]
   },
   "dependencies": {
-    "cordova-sqlite-storage-dependencies": "1.1.0"
+    "cordova-sqlite-storage-dependencies": "1.2.1"
   },
   "deprecated": false,
   "description": "Native interface to SQLite for PhoneGap/Cordova",
@@ -65,5 +65,5 @@
   "scripts": {
     "start": "node scripts/prepareSpec.js"
   },
-  "version": "2.2.0"
+  "version": "2.6.0"
 }

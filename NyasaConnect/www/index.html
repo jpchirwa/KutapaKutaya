@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/css/framework7.material.colors.min.css" />
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.css">
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.css">
     <link rel="stylesheet" href="lib/framework7/css/framework7.material.css">
@@ -101,7 +103,7 @@
                     <div class="page-content">
                         <div class="content-block">
                             <h2>Place Ad</h2> <i class="icon tabbar-demo-icon-4"></i><span class="tabbar-label"></span><figcaption id="figcaptionPlacedAd">Houses</figcaption>
-                            <form method="POST" class="list-block" action="http://bizadz.hostingerapp.com/uploadtrial.php" enctype="multipart/form-data" target="hidden-form">
+                            <form method="POST" class="list-block" action="http://bizadz.hostingerapp.com/uploadItem.php" enctype="multipart/form-data" target="hidden-form">
                                 <ul>
                                     <li>
                                         <div class="item-content">
@@ -374,9 +376,6 @@
                             <a href="#index" class="back"> Go back to home page </a>
                             <div id="PAGEPlaceHolderItem">
                             </div>
-                            <div id="PAGEPlaceHolderItem2">
-
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -391,7 +390,7 @@
                                 <p style="height:2px"></p>
                             </div>
                             <a href="#index" class="back"> Go back to home page </a>
-                            <div id="PAGEPlaceHolder" onclick="displays()">
+                            <div id="PAGEPlaceHolder">
                             </div>
                         </div>
                     </div>

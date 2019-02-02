@@ -1,12 +1,4 @@
 {
-  "cordova-plugin-camera": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-camera@^4.0.3"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-file-transfer": {
     "source": {
       "type": "registry",
@@ -31,14 +23,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-sqlite-storage": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-sqlite-storage@2.2.0"
-    },
-    "is_top_level": false,
-    "variables": {}
-  },
   "cordova-plugin-cocoapod-support": {
     "source": {
       "type": "registry",
@@ -59,6 +43,14 @@
     "source": {
       "type": "registry",
       "id": "cordova-plugin-statusbar@2.4.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-sqlite-storage": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-sqlite-storage"
     },
     "is_top_level": true,
     "variables": {}

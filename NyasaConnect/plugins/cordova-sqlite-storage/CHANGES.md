@@ -1,5 +1,55 @@
 # Changes
 
+### cordova-sqlite-storage 2.6.0
+
+- Use cordova-sqlite-storage-dependencies 1.2.1 with SQLite 3.26.0, with a security update and support for window functions
+
+### cordova-sqlite-storage 2.5.2
+
+- Ignore Android end transaction error when closing for androidDatabaseProvider: 'system' setting, to avoid possible crash during app shutdown (<https://github.com/litehelpers/Cordova-sqlite-storage/issues/833>)
+
+### cordova-sqlite-storage 2.5.1
+
+- fix internal plugin cleanup error log on Android
+
+### cordova-sqlite-storage 2.5.0
+
+- androidDatabaseProvider: 'system' setting, to replace androidDatabaseImplementation setting which is now deprecated
+
+### cordova-sqlite-storage 2.4.0
+
+- Report internal plugin error in case of attempt to open database with no database name on iOS or macOS
+- Cover use of standard (WebKit) Web SQL API in spec test suite
+- Test and document insertId in UPDATE result set on plugin vs (WebKit) Web SQL
+- other test updates
+
+### cordova-sqlite-storage 2.3.3
+
+- Quick fix for some iOS/macOS internal plugin error log messagess
+- test updates
+- quick doc updates
+
+### cordova-sqlite-storage 2.3.2
+
+- Mark some Android errors as internal plugin errors (quick fix)
+- remove trailing whitespace from Android implementation
+- test coverage updates
+- quick doc updates
+
+### cordova-sqlite-storage 2.3.1
+
+- Mark some iOS/macOS plugin error messages as internal plugin errors (quick fix)
+- Quick documentation updates
+
+### cordova-sqlite-storage 2.3.0
+
+- Use SQLite 3.22.0 with SQLITE_DEFAULT_SYNCHRONOUS=3 (EXTRA DURABLE) compile-time setting on all platforms (Android/iOS/macOS/Windows) ref: litehelpers/Cordova-sqlite-storage#736
+
+### cordova-sqlite-storage 2.2.1
+
+- SQLITE_THREADSAFE=1 compile-time setting for iOS/macOS
+- Fix Android/iOS src copyright, perpetually
+
 ## cordova-sqlite-storage 2.2.0
 
 - Android-sqlite-native-driver NDK objects in JAR to resolve issue on cordova-android@7
