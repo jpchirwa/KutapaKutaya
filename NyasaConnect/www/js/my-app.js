@@ -33,11 +33,7 @@ $(".floater").click(function () {
     myApp.addNotification({
         title: 'Place your Ad',
         message: 'Welcome to Malawis first online trading platform with over a thousand items up for sale, enjoy your experience',
-        button: {
-            text: 'Close Me',
-            color: 'red',
-            close: true
-        },
+        closeOnClick: true,
         onClose: function () {
         }
     });
