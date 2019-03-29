@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="lib/framework7-icons/css/framework7-icons.css">
     <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; media-src *; img-src * filesystem: data:">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/FAB.css">
 </head>
 
 <body>
@@ -37,15 +38,16 @@
     </div>
 
     <!-- Views -->
-    <div class="views tabs toolbar-through">
+    <div class="views">
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
             <!-- Top Navbar-->
             <div class="navbar theme-amber">
-                <div class="navbar-inner" data-page="index">
+                <div class="navbar-inner">
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding" id="title"><center>Kutapa Kutaya Mw</center></div>
+                    <div class="center sliding" id="title">Kutapa Kutaya Mw</div>
                     <div class="right">
+
                         <!--
                   Right link contains only icon - additional "icon-only" class
                   Additional "open-panel" class tells app to open panel when we click on this link
@@ -55,11 +57,54 @@
                 </div>
             </div>
             <div class="floater">
-                <a href="#" class="floating-button color-orange">
+                <a href="#" class="floating-button floating-button-to-popover open-popover color-orange">
                     <i class="icon icon-plus"></i>
                 </a>
             </div>
-
+            <!-- Popover -->
+            <div class="popover demo-popover">
+                <div class="popover-inner">
+                    <div class="list-block">
+                        <ul>
+                            <li>
+                                <a href="#" class="item-content item-link cars">
+                                    <div class="item-inner">
+                                        <div class="item-title"><i class="icon tabbar-demo-icon-1a"></i><span class="tabbar-label"></span><figcaption id="figcaption">Sell Cars</figcaption></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="item-content item-link electronics">
+                                    <div class="item-inner">
+                                        <div class="item-title"><i class="icon tabbar-demo-icon-2a"></i><span class="tabbar-label"></span><figcaption id="figcaption">Sell Electronics</figcaption></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="item-content item-link clothes">
+                                    <div class="item-inner">
+                                        <div class="item-title"><i class="icon tabbar-demo-icon-3a"></i><span class="tabbar-label"></span><figcaption id="figcaption">Sell Clothes</figcaption></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="item-content item-link houses">
+                                    <div class="item-inner">
+                                        <div class="item-title"> <i class="icon tabbar-demo-icon-4a"></i><span class="tabbar-label"></span><figcaption id="figcaption">Sell Houses</figcaption></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="item-content item-link services">
+                                    <div class="item-inner">
+                                        <div class="item-title"><i class="icon tabbar-demo-icon-5a"></i><span class="tabbar-label"></span><figcaption id="figcaption">Advertise Services</figcaption></div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
 
             <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->

@@ -2,7 +2,6 @@
 var myApp = new Framework7({
     material: true,
     swipePanel: 'left',
-    preloadPreviousPage: true,
     template7Pages: true,
     pushState: true, //Android back button go back a page
     init: false, //Disable App's automatic initialization
@@ -29,16 +28,16 @@ $$(document).on('deviceready', function deviceIsReady() {
         StatusBar.hide();
     }
 });
-$(".floater").click(function () {
-    myApp.addNotification({
-        title: 'Place your Ad',
-        message: 'Welcome to Malawis first online trading platform with over a thousand items up for sale, enjoy your experience',
-        closeOnClick: true,
-        onClose: function () {
-        }
-    });
-    mainView.router.load({ pageName: 'upload' });
-});
+//$(".floater").click(function () {
+//    myApp.addNotification({
+//        title: 'Place your Ad',
+//        message: 'Welcome to Malawis first online trading platform with over a thousand items up for sale, enjoy your experience',
+//        closeOnClick: true,
+//        onClose: function () {
+//        }
+//    });
+//    mainView.router.load({ pageName: 'upload' });
+//});
 
 // Now we need to run the code that will be executed only for About page.
 $("input").focus(function () {
@@ -99,9 +98,13 @@ function submit() {
         $$('#PAGEPlaceHolderItem').html(data);
     });
 }
+$(".item-content item-link electronics").click(function () {
+    alert();
+});
 $(".b").click(function () {
-    mainView.router.load({ pageName: 'electronics' });
     getelectronics();
+    mainView.router.load({ pageName: 'electronics' });
+    
 });
 $(".btest").click(function () {
     var container = $$('.demo-progressbar-load-hide p:first-child');
