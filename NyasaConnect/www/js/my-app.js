@@ -89,12 +89,12 @@ document.getElementById("filesc").onchange = function () {
     reader.readAsDataURL(this.files[0]);
 };
 function getelectronics() {
-    $$.get('http://bizadz.hostingerapp.com/electronics.php', {}, function (data) {
+    $$.get('http://kutapakutaya.online/electronics.php', {}, function (data) {
         $$('#PAGEPlaceHolder').html(data);
     });
 }
 function submit() {
-    $$.get('http://bizadz.hostingerapp.com/displayItem.php', {}, function (data) {
+    $$.get('http://kutapakutaya.online/displayItem.php', {}, function (data) {
         $$('#PAGEPlaceHolderItem').html(data);
     });
 }
