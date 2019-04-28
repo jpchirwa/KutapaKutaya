@@ -4,7 +4,7 @@ var myApp = new Framework7({
     swipePanel: 'left',
     template7Pages: true,
     pushState: true, //Android back button go back a page
-    init: false, //Disable App's automatic initialization
+    init: false //Disable App's automatic initialization
 });
 
 
@@ -28,16 +28,16 @@ $$(document).on('deviceready', function deviceIsReady() {
         StatusBar.hide();
     }
 });
-//$(".floater").click(function () {
-//    myApp.addNotification({
-//        title: 'Place your Ad',
-//        message: 'Welcome to Malawis first online trading platform with over a thousand items up for sale, enjoy your experience',
-//        closeOnClick: true,
-//        onClose: function () {
-//        }
-//    });
-//    mainView.router.load({ pageName: 'upload' });
-//});
+$(".floater").click(function () {
+    //myApp.addNotification({
+    //    title: 'Place your Ad',
+    //    message: 'Welcome to Malawis first online trading platform with over a thousand items up for sale, enjoy your experience',
+    //    closeOnClick: true,
+    //    onClose: function () {
+    //    }
+    //});
+    mainView.router.load({ pageName: 'upload' });
+});
 
 // Now we need to run the code that will be executed only for About page.
 $("input").focus(function () {

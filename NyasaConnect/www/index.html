@@ -45,7 +45,7 @@
             <div class="navbar theme-amber">
                 <div class="navbar-inner">
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding" id="title">Kutapa Kutaya Mw</div>
+                    <div class="center sliding title">Kutapa Kutaya Mw</div>
                     <div class="right">
 
                         <!--
@@ -61,52 +61,6 @@
                     <i class="icon icon-plus"></i>
                 </a>
             </div>
-            <!-- Popover -->
-            <div class="popover demo-popover">
-                <div class="popover-inner">
-                    <div class="list-block">
-                        <ul>
-                            <li>
-                                <a href="#" class="item-content item-link cars">
-                                    <div class="item-inner">
-                                        <div class="item-title"><i class="icon tabbar-demo-icon-1a"></i><span class="tabbar-label"></span><figcaption id="figcaption">Sell Cars</figcaption></div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="item-content item-link electronics">
-                                    <div class="item-inner">
-                                        <div class="item-title"><i class="icon tabbar-demo-icon-2a"></i><span class="tabbar-label"></span><figcaption id="figcaption">Sell Electronics</figcaption></div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="item-content item-link clothes">
-                                    <div class="item-inner">
-                                        <div class="item-title"><i class="icon tabbar-demo-icon-3a"></i><span class="tabbar-label"></span><figcaption id="figcaption">Sell Clothes</figcaption></div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="item-content item-link houses">
-                                    <div class="item-inner">
-                                        <div class="item-title"> <i class="icon tabbar-demo-icon-4a"></i><span class="tabbar-label"></span><figcaption id="figcaption">Sell Houses</figcaption></div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="item-content item-link services">
-                                    <div class="item-inner">
-                                        <div class="item-title"><i class="icon tabbar-demo-icon-5a"></i><span class="tabbar-label"></span><figcaption id="figcaption">Advertise Services</figcaption></div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-
             <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
             <div class="pages navbar-through toolbar-through">
                 <!-- Page, "data-page" contains page name -->
@@ -147,9 +101,9 @@
                 </div>
                 <div class="page cached" data-page="upload">
                     <div class="page-content">
-                        <div class="content-block">
-                            <h2>Place Ad</h2> <i class="icon tabbar-demo-icon-4"></i><span class="tabbar-label"></span><figcaption id="figcaptionPlacedAd">Houses</figcaption>
-                            <form method="POST" class="list-block" action="http://bizadz.hostingerapp.com/uploadItem.php" enctype="multipart/form-data" target="hidden-form">
+                        <div class="content-block-title">Place Ad</div>
+                        <div class="list-block">
+                            <form method="POST" action="http://kutapakutaya.online/uploadItem.php" enctype="multipart/form-data" target="hidden-form">
                                 <ul>
                                     <li>
                                         <div class="item-content">
@@ -160,34 +114,39 @@
                                                     <img id="imageb" style="display:none;" />
                                                     <img id="imagec" style="display:none;" />
                                                 </div>
-                                                <div class="item-input">
-                                                    <div class="uploadimage">
-                                                        <label class="custom-file-upload">
-                                                            <input type="file" name="imagea" id="filesa" required accept="image/*">
-                                                            Add 1st Photo(Required)
-                                                        </label>
-                                                    </div>
-                                                    <br />
-                                                </div>
-                                                <div class="item-input">
-                                                    <div class="uploadimage">
-                                                        <label class="custom-file-upload">
-                                                            <input type="file" name="imageb" id="filesb" accept="image/*">
-                                                            Add 2nd Photo(Optional)
-                                                        </label>
-                                                    </div>
-                                                    <br />
-                                                </div>
-                                                <div class="item-input">
-                                                    <div class="uploadimage">
-                                                        <label class="custom-file-upload">
-                                                            <input type="file" name="imagec" id="filesc" accept="image/*">
-                                                            Add 3rd Photo(optional)
-                                                        </label>
-                                                    </div>
-                                                    <br />
-                                                </div>
                                             </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li class="item-content">
+                                        <div class="item-media"><i class="f7-icons color-black">add_round</i></div>
+                                        <div class="item-inner">
+                                            <div class="item-title">Add 1st Photo(Required)</div>
+                                            <label class="item-after custom-file-upload">
+                                                <input type="file" name="imagea" id="filesa" accept="image/*">
+                                                <i class="f7-icons color-black">arrow_right</i>Click here to add
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="item-content">
+                                        <div class="item-media"><i class="f7-icons color-black">add_round</i></div>
+                                        <div class="item-inner">
+                                            <div class="item-title">Add 2nd Photo(Optional)</div>
+                                            <label class="item-after custom-file-upload">
+                                                <input type="file" name="imageb" id="filesb" accept="image/*">
+                                                <i class="f7-icons color-black">arrow_right</i>Click here to add
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="item-content">
+                                        <div class="item-media"><i class="f7-icons color-black">add_round</i></div>
+                                        <div class="item-inner">
+                                            <div class="item-title">Add 3rd Photo(Optional)</div>
+                                            <label class="item-after custom-file-upload">
+                                                <input type="file" name="imagec" id="filesc" accept="image/*">
+                                                <i class="f7-icons color-black">arrow_right</i>Click here to add
+                                            </label>
                                         </div>
                                     </li>
                                 </ul>
@@ -396,8 +355,8 @@
                             </form>
                             <IFRAME style="display:none" name="hidden-form"></IFRAME>
                         </div>
+                        </div>
                     </div>
-                </div>
                 <div class="page cached" data-page="cars">
                     <div class="page-content">
                         <h3>Search Results</h3>
@@ -419,7 +378,7 @@
                             <div class="demo-progressbar-load-hide">
                                 <p style="height:2px"></p>
                             </div>
-                            <a href="#index" class="back"> Go back to home page </a>
+                            <a href="#index" class="back"><i class="f7-icons color-black">arrow_left_fill</i></a>
                             <div id="PAGEPlaceHolderItem">
                             </div>
                         </div>
@@ -432,7 +391,7 @@
                             <div id="Search">
                                 <input type="text" name="search" placeholder="Search and find..">
                             </div>
-                            <a href="#index" class="back"> Go back to home page </a>
+                            <a href="#index" class="back"><i class="f7-icons color-black">arrow_left_fill</i></a>
                             <div id="PAGEPlaceHolder">
                             </div>
                         </div>

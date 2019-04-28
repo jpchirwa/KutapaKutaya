@@ -169,18 +169,13 @@ figcaptionPlacedAd {
 input[type="file"] {
     display: none;
 }
-.custom-file-upload {
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    background-color: lightskyblue;
-    color: white;
-    font-size: 15px;
-    padding: 12px 14px;
+/*.custom-file-upload {
+    position: relative;
+    background-color:lightsalmon;
+    color: black;
     border: none;
-    cursor: pointer;
-    border-radius: 5px;
     text-align: center;
-}
+}*/
 #imagea {
    margin-right:10px;
 }
