@@ -49,9 +49,6 @@ $("input").focus(function () {
     $("img").removeClass("blur");
     $("p").removeClass("blur");
     });
-$(".a").click(function () {
-    mainview.router.load({ pagename: 'cars' });
-});
 document.getElementById("filesa").onchange = function () {
     var reader = new FileReader();
 
@@ -101,12 +98,10 @@ function submit() {
 $(".item-content item-link electronics").click(function () {
     alert();
 });
-$(".b").click(function () {
-    getelectronics();
-    mainView.router.load({ pageName: 'electronics' });
-    
+$(".a").click(function () {
+    mainview.router.load({ pagename: 'cars' });
 });
-$(".btest").click(function () {
+$(".b").click(function () {
     var container = $$('.demo-progressbar-load-hide p:first-child');
     if (container.children('.progressbar').length) return; //don't run all this if there is a current progressbar loading
  
@@ -129,27 +124,57 @@ $(".btest").click(function () {
     }
     simulateLoading();
 });
+$(".btest").click(function () {
+    getelectronics();
+    mainView.router.load({ pageName: 'electronics' });
+    //function for electronics page
+});
 $(".c").click(function () {
     mainView.router.load({ pageName: 'clothes' });
+    //function for clothes page
 });
 $(".d").click(function () {
     mainView.router.load({ pageName: 'houses' });
+    //function for houses page
 });
 $(".submit").click(function () {
-    myApp.addNotification({
-        title: 'My Awesome App',
-        subtitle: 'New message from John Doe',
-        message: 'Hello, how are you? ',
-        media: '<img width="44" height="44" style="border-radius:100%" src="http://lorempixel.com/output/people-q-c-100-100-9.jpg">',
-        onClose: function () {
-            submit();
+    var container = $$('.demoa-progressbar-load-hide p:first-child');
+    if (container.children('.progressbar').length) return; //don't run all this if there is a current progressbar loading
+
+    myApp.showProgressbar(container, 0);
+
+    // Simluate Loading Something
+    var progress = 0;
+    function simulateLoading() {
+        setTimeout(function () {
+            var progressBefore = progress;
+            progress += Math.random() * 5;
+            myApp.setProgressbar(container, progress);
+            if (progressBefore < 100) {
+                simulateLoading(); //keep "loading"
+            }
+            else myApp.hideProgressbar(container);//hide
+            submit();//function for submitting to php file to upload
             mainView.router.load({ pageName: 'displayitem' });
-        }
-    });
+            document.getElementById("myForm").reset();
+            document.getElementById("imagea").style.display = 'none';
+            document.getElementById("imageb").style.display = 'none';
+            document.getElementById("imagec").style.display = 'none';
+        }, Math.random() * 50 + 10);
+    }
+    simulateLoading();
+
+    //below funtion is add notification
+    //myApp.addNotification({
+    //    title: 'My Awesome App',
+    //    subtitle: 'New message from John Doe',
+    //    message: 'Hello, how are you? ',
+    //    media: '<img width="20" height="20" style="border-radius:10%" src="http://lorempixel.com/output/people-q-c-100-100-9.jpg">',
+    //    onClose: function () {
+    //        submit();//function for submitting to php file to upload
+    //        //mainView.router.back({ pageName: 'index' }); //if i want to go back to the home page
+    //        mainView.router.load({ pageName: 'displayitem' });
+    //    }
+    //});
 });
 myApp.init();
-function Dialog() {
-    myApp.alert('Here goes alert text', 'Custom Title!', function () {
-        myApp.alert('Button clicked!')
-    });
-}
