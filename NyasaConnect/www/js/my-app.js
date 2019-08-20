@@ -37,6 +37,7 @@ $(".floater").click(function () {
     //    }
     //});
     mainView.router.load({ pageName: 'upload' });
+    document.getElementByClass("floater").style.display = 'none';
 });
 
 // Now we need to run the code that will be executed only for About page.
